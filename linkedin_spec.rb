@@ -24,7 +24,7 @@ it 'succeeded' do
 	#isnce the login button didn't have unique id so we're submitting the form instead
 	@driver.find_element(class: 'login-form').submit
 	# Add some wait
-
+	@driver.manage.timeouts.implicit_waits = 10
 	#7Leveraging some assertion
 	@driver.find_element(css: '.menubar-lix').displayed?.should be_true
 
